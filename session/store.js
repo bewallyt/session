@@ -36,12 +36,9 @@ Store.prototype.__proto__ = EventEmitter.prototype;
  * @api public
  */
 
-Store.prototype.regenerate = function(req, fn){
+Store.prototype.regenerate = function(req){
   var self = this;
-  this.destroy(req.sessionID, function(err){
     self.generate(req);
-    fn(err);
-  });
 };
 
 /**
